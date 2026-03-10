@@ -3,5 +3,8 @@ Temperature conversion using polymorphism, assignment for Programming in Python 
 
 ## Future Additions
 
-- GUI
+- Add exception handling to temperature classes
+- Documentation
+- Semantic class property protection
+- Enter key as alternative to convert button
 - Kelvin?
