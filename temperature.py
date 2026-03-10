@@ -6,7 +6,7 @@ DEG = "\u00b0" # Degree character code
 # Abstract class for Celsius and Fahrenheit implementation
 class Temperature(ABC):
     def __init__(self, temp):
-        self._temp = temp
+        self._temp = float(temp)
 
     # Meant to return a Celsius representation of the temperature
     @abstractmethod
@@ -86,12 +86,12 @@ class BaseTemperatureTest(ABC):
 
 # CelsiusTemperature and FahrenheitTemperature test class implementations
 # Due to polymorphism and identical tests, implementation only requires defining variables
-class TestCelsiusTemperature(BaseTemperatureTest, unittest.TestCase):
+class TestCelsiusTemperature(unittest.TestCase, BaseTemperatureTest):
     def setUp(self): #initializes freezing and boiling temps in Celsius for test functions
         self._freezing_temp = CelsiusTemperature(0)
         self._boiling_temp = CelsiusTemperature(100)
 
-class TestFahrenheitTemperature(BaseTemperatureTest, unittest.TestCase):
+class TestFahrenheitTemperature(unittest.TestCase, BaseTemperatureTest):
     def setUp(self):#initializes freezing and boiling temps in Fahrenheit for test functions
         self._freezing_temp = FahrenheitTemperature(32)
         self._boiling_temp = FahrenheitTemperature(212)
