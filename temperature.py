@@ -66,6 +66,7 @@ class BaseTemperatureTest(ABC):
         pass
 
     # Confirm that as_celsius, as_fahrenheit, and __str__ function as expected at both freezing and boiling temps
+    # The variables self._freezing_temp and self._boiling_temp must be defined in child classes
     def test_celsius_freezing(self):
         self.assertEqual(self._freezing_temp.as_celsius(), 0.0)
 
